@@ -1,0 +1,44 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-size: 18px;
+    border: 2px solid black;
+}
+.parent > * {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.parent {
+    width: 600px;
+    height: 600px;
+    background: #7dced5;
+    margin: 20px;
+}
+.parent > * {
+    width: 200px;
+    height: 150px;
+}
+/* --------------演示代码---------------- */
+.static {
+    background: #fff350;
+    position: static;
+}
+.relative {
+    background: #ee5ba0;
+    position: relative;
+}
+.parent {
+    position: relative;
+}
+.absolute {
+    background: #f58a33;
+    position:absolute;
+    left:10px
+}
+.fixed {
+    background: #00aa5b;
+}
