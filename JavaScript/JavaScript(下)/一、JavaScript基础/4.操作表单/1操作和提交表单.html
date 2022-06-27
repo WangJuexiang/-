@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="post">
+<!--单选框-->
+    <p>
+    <span>用户名：</span><input type=text" id="username">
+    </p>
+
+<!--多选框-->
+<!--多选框的值需要定义好的value-->
+    <p>
+        <span>性别：</span>
+        <input type="radio" name="sex" value="male">男
+        <input type="radio" name="sex" value="female">女
+    </p>
+</form>
+
+<script>
+    var input_text = document.getElementById('username');
+    input_text.value //得到输入框的值
+    input_text.value = '456' //修改输入框的值
+</script>
+
+</body>
+</html>

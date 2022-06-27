@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--1.面向对象原型继承-->
+    <script>
+        var student = {
+            name: "xiaoming",
+            age: 18,
+            run: function () {
+                console.log(this.name + "running...")
+            }
+        };
+
+        var xiaohong = {
+            name : "xiaohong",
+        }
+
+        xiaohong.__proto__ = student;
+    </script>
+
+<!--2.class继承-->
+<script>
+    function member(name) {
+        this.name = name;
+    }
+
+    //给member新增一个方法
+   member.prototype.hello = function () {
+        alert('hello')
+   };
+
+    //ES6 新增class方法：
+    class member {
+
+        constructor() {
+            this.name = name;
+        }jshakdjakdjfka
+        hello() {
+            alert('hello')
+        }
+    }
+
+
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

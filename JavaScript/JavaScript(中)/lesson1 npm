@@ -1,0 +1,18 @@
+1.什么是包管理器？
+发布包的平台，维护包的版本和修改信息、命令行的操作……等集合
+有npm/Homebrew/APT-GET/gradle/RubyGems
+2.npm简介
+Node Package Manager
+是js世界里的包管理器，可以共享js包，以及一些企业开发环境
+web：寻找合适的包并管理
+registry：大型数据库存放包
+CLi：提供指令进行npm相关操作
+
+package.json文件管理项目依赖
+package-lock.json 各依赖当前版本信息及关系呈现
+3.npm实践
+4.npm发布
+注册npm账号-根据npm推荐的标准开发个人js库-确定其为public/private-CLI:npm publish/unpublish-在nom网站登录检查库
+
+
+

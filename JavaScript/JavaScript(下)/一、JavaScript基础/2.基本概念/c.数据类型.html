@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--1.数字number-->
+    整数：123
+    浮点数：123.1（js不区分小数和整数）
+    科学计数法：1.23e3
+    负数：-123
+    无限大：infinity
+    非数字：NaN
+<!--2.字符串String-->
+    2.1 正常字符串使用单引号或双引号包裹，特殊符号使用转义字符\
+    'abc'
+    2.2 反引号与模板字符串
+    `hello
+    world`
+    <script>
+    let id = 'uzi'
+    let rank = 1
+
+    let msg = `yyds, ${ id }`
+    </script>
+
+    2.3 字符串长度
+    console.log(string.length)
+
+    2.4 字符串取元素
+    console.log(student[0])
+
+    2.5 字符串获取指定下标的位置
+    console.log（string.indexOf('t')
+
+    2.6 截取字符串
+    console.log(student.substring(1))
+    tudent
+    console.log(student.substring(1,3)) 包含前面不包含后面
+    tu
+
+    2.5 字符串大小写
+    console.log(string.toUpperCase())
+    console.log(string.toLowerCase())
+
+<!--3.布尔值-->
+    true 真
+    false 假
+<!--4.逻辑运算-->
+    && 与
+    || 或
+    !  非
+<!--5.比较运算符-->
+    = 赋值
+    == 等于
+    === 绝对等于（常用，比较类型和值都一样）
+<!--6.null和undefined-->
+    null 空
+    undefined 未定义的变量
+<!--7.数组-->
+    一系列数据的集合，js中的数组内可以包含任意的数据类型
+    <script>
+    var arr = [1,2,3,4,5,6]
+    </script>
+
+    7.1 长度
+    arr.length (js中可以给arr.length赋值以改变数组大小）
+
+    7.2 通过元素获得下标索引
+    arr.indexOf(2)
+    1
+
+    7.3 截取数组一部分，返回新数组(类似之前substring）
+    arr.slice(1,3)
+
+    7.4 加入与弹出元素
+    尾部
+    arr.push()
+    arr.pop()
+    头部
+    arr.unshift()
+    arr.shift()
+
+    7.5 排序与倒序
+    arr.sort()
+    arr.reverse()
+
+    7.6 拼接
+    concat()
+    concat()不会修改数组本身，只是会返回一个新的拼接数组
+
+    7.7连接符
+    打印拼接数组，使用特定符号连接
+    var arr = ['1','2','3']
+    arr.join('-')
+    return '1-2-3'
+
+    7.8 多维数组与取值
+    方法同一般数组
+        arr = [[1,2],[3,4],['5','6']]
+        arr[1][1]
+        return 4
+
+<!--8.对象-->
+<script>
+    var person = {
+        name: 'jiojio',
+        age: 25,
+        skills: ['html','css','javascript','react']
+    }
+</script>
+
+<!--9.标准对象:Date-->
+    <script>
+        var now = new Date();//Mon May 23 2022 09:36:06 GMT+0800 (China Standard Time)
+        now.getFullYear();//2022
+        now.getMonth();//4(月份为0-11）
+        now.getDate();//23
+        now.getDay();//1
+        now.getHours();//9
+        now.getHours();//9
+        now.getMinutes();//36
+        now.getSeconds();//6
+
+        now.getTime();//时间戳：1653269766641
+
+        console.log(new Date(1653269766641));//时间戳转换为时间
+        now.toLocaleString();//获取本地时间
+    </script>
+
+<!--10.标准对象:json-->
+    <script>
+        var user = {
+            name : "Trump",
+            age : 3,
+            country : "China"
+        }
+
+        //对象转化为json字符串
+        var jsonUser = JSON.stringify(user)
+        //console.log(jsonUser):{"name":"Trump","age":3,"country":"China"}
+
+        //json字符串转化为对象
+        var obj = JSON.parse('{"name":"Trump","age":3,"country":"China"}')
+        //console.log(obj)
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--DOM:Document Object Model,文档对象模型-->
+<!--浏览器网页就是一个Dom树形结构-->
+<!--更新：更新DOM节点-->
+<!--遍历：得到DOM节点-->
+<!--删除：-->
+<!--添加：-->
+<!--若要操作一个DOM节点，就必须要先获得DOM节点,然后进行各种操作-->
+<body>
+
+<div id="father">
+    <h1>标题一</h1>
+    <p id="p1">p1</p>
+    <p class="p2">p2</p>
+</div>
+
+<script>
+    //1.获得DOM节点(对应css的选择器)
+    var h1 = document.getElementsByTagName('h1')
+    var p1 = document.getElementById('p1')
+    var p2 = document.getElementsByClassName('p2')
+    var father = document.getElementById('father')
+
+    var childrens = father.children; //获取父节点下的所有子节点
+    // father.firstChild
+    // father.lastChild
+
+
+</script>
+
+2.更新DOM节点
+<div id="id1">
+
+</div>
+<script>
+    var id1 = document.getElementById('id1')
+
+    // 操作文本
+    id1.innerText = '123' //修改文本的值
+    id1.innerHTML = '<strong>123</strong>' //可以解析HTML文本标签
+
+    //操作CSS
+    id1.style.color = 'red';
+    id1.style.fontSize = '20px';
+    id1.style.padding = '2em'
+</script>
+
+3.删除DOM节点
+先获取父节点，再通过父节点删除
+<!--参考第18行-->
+<script>
+    var self = document.getElementById('p1');
+    var father = p1.parentElement;
+    father.removeChild(self)
+
+    //通过下标删除多个节点时，children在时刻变化
+    // father.removeChild(father.children[0])
+    // father.removeChild(father.children[1])
+    // father.removeChild(father.children[2])
+</script>
+
+4.插入DOM节点
+获得了某个DOM节点之后，假设该节点是空的，通过innerHtml即可增加一个元素
+但若该节点有内容，则会覆盖
+
+4.1移动节点
+
+<p id="js">JavaScript</p>
+<div id="list">
+    <p id="se">JavaSE</p>
+    <p id="ee">JavaEE</p>
+    <p id="me">JavaME</p>
+</div>
+
+<script>
+
+    var js = document.getElementById('js');
+    var list = document.getElementById('list');
+
+    list.appendChild(js)
+
+    //4.2创建一个新的节点
+    var newP = document.createElement('p');
+    newP.id = 'newP';
+    newP.innerText = 'Hello,world';
+
+    list.appendChild(newP)
+    //或者
+    var newP = document.createElement('p');
+    newP.setAttribute(id,newP)
+
+</script>
+
+</body>
+</html>

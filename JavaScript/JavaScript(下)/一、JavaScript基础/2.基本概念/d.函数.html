@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--1. 定义函数-->
+    <script>
+        function abs(x) {
+            if(x>=0) {
+                return x;
+            } else{
+                return -x;
+            }
+        }
+    </script>
+    或
+    <script>
+        var absolute = function(y) {
+            if (typeof y !== 'number')
+                return 'Not a number'; //手动抛出异常
+            if (y<=0){
+                return -y;
+            } else {
+                return y;
+            }
+        }
+    </script>
+<!--2.调用函数-->
+    abs(x)
+    absolute(y)
+
+
+</head>
+<body>
+
+</body>
+</html>

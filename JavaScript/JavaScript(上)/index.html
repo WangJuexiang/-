@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="index.js"></script>
 </head>
+
 <body>
+    <h1>javascript的学习心得</h1>
+    <p id='demo'>
+        JavaScript感觉学起来无从下手
+    </p>
+    <script>
+        function changeContentWhenClick() {
 
-
+            let paragraph = document.getElementById('demo')
+            paragraph.innerHTML = "JavaScript现在有点思路了"
+            paragraph.style.color = 'red';
+        }
+    </script>
+    <button type='button' onclick='changeContentWhenClick()'>请点击此处</button>
 </body>
+
 </html>
