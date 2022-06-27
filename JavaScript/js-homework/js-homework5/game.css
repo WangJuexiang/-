@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    width: 350px;
+    height: 450px;
+    border: solid 2px red;
+    margin: 20px auto;
+    font-size: 22px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.time {
+    float: left;
+
+}
+
+.score {
+    float: right;
+
+}
+
+.big-text {
+    /*background-color: pink;*/
+    width: 100%;
+    text-align: center;
+    font-size: 200px;
+}
+
+.small-text {
+    list-style: none;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    /*background-color: salmon;*/
+    padding-top: 50px;
+    font-size: 32px;
+}

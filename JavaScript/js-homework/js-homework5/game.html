@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>game</title>
+    <link rel="stylesheet" type="text/css" href="game.css">
+
+</head>
+
+<body>
+    <main>
+        <span class="time">剩余时间:15</span>
+        <span class="score">分数:0</span>
+        <p class="big-text">红</p>
+        <ul class="small-text">
+            <li>红</li>
+            <li>黄</li>
+            <li>蓝</li>
+            <li>绿</li>
+            <li>紫</li>
+        </ul>
+    </main>
+</body>
+
+</html>
+<script>
+    let scoreEl = document.getElementsByClassName("score")[0]
+    let timeEl = document.getElementsByClassName("time")[0];
+    let bigEl = document.getElementsByClassName("big-text")[0];
+    let smallArray = document.getElementsByTagName("li");
+
+    let score = 0;
+    let time = 11;
+
+    let textArray = ["红", "黄", "蓝", "绿", "紫"];
+    let colorArray = ["red", "yellow", "blue", "green", "purple"];
+
+    let answer;
+
+    function randomNum(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    function changeBigText() {
+
+        let index = randomNum(0, textArray.length - 1);
+        bigEl.innerHTML = textArray[index];
+
+        let colorIndex = randomNum(0, colorArray.length - 1);
+        bigEl.style.color = colorArray[colorIndex];
+
+        answer = colorArray[colorIndex];
+    }
+
+    changeBigText();
+
+    function changeSmallText() {
+
+        crashArray(textArray);
+
+        crashArray(colorArray);
+
+        for (let i = 0; i < smallArray.length; i++) {
+            smallArray[i].innerHTML = textArray[i];
+            smallArray[i].style.color = colorArray[i];
+        }
+
+    }
+
+    changeSmallText();
+
+    function crashArray(arr) {
+        for (let i = 0; i < 10; i++) {
+            let n1 = randomNum(0, 4);
+            let n2 = randomNum(0, 4);
+            if (n1 != n2) {
+                var t = arr[n1];
+                arr[n1] = arr[n2];
+                arr[n2] = t;
+            }
+        }
+    }
+
+    for (let i = 0; i < 5; i++) {
+        smallArray[i].onclick = function () {
+            console.log(getColorByText(this.innerHTML));
+            let color = getColorByText(this.innerHTML);
+
+            if (color == daan) {
+
+                score++;
+                changeBigText();
+                changeSmallText();
+
+                scoreEl.innerHTML = "分数" + score;
+            }
+        }
+    }
+    //处理点击的中文汉字 获取其对应的英文单词
+    function getColorByText(text) {
+        switch (text) {
+            case "红":
+                return "red";
+            case "黄":
+                return "yellow";
+            case "蓝":
+                return "blue";
+            case "绿":
+                return "green";
+            case "紫":
+                return "purple";
+            default:
+                break;
+        }
+    }
+
+    let s1 = setInterval(function () {
+        time--;
+        if (time == 0) {
+            clearInterval(s1);
+            for (let i = 0; i < smallArray.length; i++) {
+                smallArray[i].onclick = null;
+            }
+        }
+        timeEl.innerHTML = "剩余时间:" + time;
+    }, 1000);
+</script>
