@@ -21,10 +21,4 @@ let arr = [a, b, c];
 arr.sort();
 console.log(arr[1])
 
-//三元运算符方法
-a > b & b > c ? b : null;//abc
-a > c & c > b ? c : null;//acb
-b > a & a > c ? a : null;//bac
-b > c & c > a ? c : null;//bca
-c > a & a > b ? a : null;//cab
-c > b & b > a ? b : null;//cba
+

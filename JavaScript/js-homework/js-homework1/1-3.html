@@ -1,0 +1,26 @@
+<!-- 题目：存储三角形三边的长，判断并输出是否能组成三角形 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    1-3
+</head>
+
+<body>
+    <script>
+        function isTriangle(a, b, c) {
+            if (a + b > c && a + c > b && b + c > a) {
+                return 'triangle'
+            } else {
+                return 'not a triangle'
+            }
+        }
+        console.log(isTriangle(2, 3, 4)); //'triangle'
+        console.log(isTriangle(1, 2, 3))  //'not a triangle'
+
+    </script>
+</body>
+
+</html>

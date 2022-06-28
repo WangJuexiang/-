@@ -13,7 +13,7 @@ var colorArray = ["red", "yellow", "blue", "green", "purple"];
 //定义变量 存储答案
 var daan;
 //封装函数
-//随机函数
+//产生随机数
 function randomNum(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }

@@ -1,0 +1,29 @@
+<!-- 问题：输入一个数，判断符号，如果大于0，输出“正数”；如果小于0，输出“负数”；如果等于0，输出“0” -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    2-2
+</head>
+
+<body>
+    <script>
+        function isPositive(num) {
+
+            if (num > 0) {
+                return '正数'
+            } else if (num < 0) {
+                return '负数'
+            } else {
+                return '0';
+            }
+        }
+        console.log(isPositive(7)); //'正数'
+        console.log(isPositive(-7));//'负数'
+        console.log(isPositive(0))  //'0'
+    </script>
+</body>
+
+</html>

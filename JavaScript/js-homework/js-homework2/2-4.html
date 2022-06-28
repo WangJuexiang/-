@@ -1,0 +1,32 @@
+<!-- 题目：编程实现铁路托运行李规定：行李不超过50kg，托运费为0.15元/公斤；超出50kg，超出部分每公斤加收0.1元 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    2-4
+</head>
+
+<body>
+    <script>
+        function baggageCost(weight) {
+            // let cost;
+            if (weight <= 50) {
+                // cost = 0.15 * weight;
+                return 0.15 * weight;
+            } else if (weight > 50) {
+                // cost = 7.5 + 0.25 * (weight - 50)
+                return 7.5 + 0.25 * (weight - 50);
+            }
+        }
+        console.log(baggageCost(10)); //1.5
+        console.log(baggageCost(60))  //10
+    </script>
+</body>
+
+</html>
+</script>
+</body>
+
+</html>

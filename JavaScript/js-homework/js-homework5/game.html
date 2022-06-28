@@ -38,22 +38,35 @@
 
     let answer;
 
+    //产生随机数
     function randomNum(min, max) {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
     function changeBigText() {
-
+        //取随机文字
         let index = randomNum(0, textArray.length - 1);
         bigEl.innerHTML = textArray[index];
-
+        //取随机颜色
         let colorIndex = randomNum(0, colorArray.length - 1);
         bigEl.style.color = colorArray[colorIndex];
 
         answer = colorArray[colorIndex];
     }
-
     changeBigText();
+
+    //打乱数组方法
+    function crashArray(arr) {
+        for (let i = 0; i < 10; i++) {
+            let n1 = randomNum(0, 4);
+            let n2 = randomNum(0, 4);
+            if (n1 != n2) {
+                let t = arr[n1];
+                arr[n1] = arr[n2];
+                arr[n2] = t;
+            }
+        }
+    }
 
     function changeSmallText() {
 
@@ -70,25 +83,13 @@
 
     changeSmallText();
 
-    function crashArray(arr) {
-        for (let i = 0; i < 10; i++) {
-            let n1 = randomNum(0, 4);
-            let n2 = randomNum(0, 4);
-            if (n1 != n2) {
-                var t = arr[n1];
-                arr[n1] = arr[n2];
-                arr[n2] = t;
-            }
-        }
-    }
-
     for (let i = 0; i < 5; i++) {
         smallArray[i].onclick = function () {
-            console.log(getColorByText(this.innerHTML));
+            // console.log(getColorByText(this.innerHTML));
             let color = getColorByText(this.innerHTML);
 
-            if (color == daan) {
-
+            //对比答案并更新分数和大小字
+            if (color == answer) {
                 score++;
                 changeBigText();
                 changeSmallText();
@@ -115,6 +116,7 @@
         }
     }
 
+    //计时器实现
     let s1 = setInterval(function () {
         time--;
         if (time == 0) {
